@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Mayumi.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+
+    <%-- Must be in order --%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    
+        <div>
+            <%-- We put the navbar in the container so that it doesnt
+                expand the whole page --%>
+            <div class="container">
+
+                    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+                        <%-- fixed-top so that the navbar stays even
+                            if you scroll down --%>
+                               
+                        <a href="Default.aspx" 
+                            class="navbar-brand mb-0 h1">
+                        <%-- To make it a clickable link for the logo --%>
+                        <img
+                            class="d-inline-block align-top"
+                            src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" <%-- temporary logo--%>
+                            width="30" height="30"/>
+                            Mayumi Haven
+                        </a> 
+                        <%-- nav bar links disappear when the screen is small 
+                            so we add a toggle --%>
+                        <button 
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav"
+                            class="navbar-toggler"
+                            aria-controls="navbarNav"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation"
+                            >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" 
+                            id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a href="Default.aspx#home" class="nav-link active">
+                                        Home
+                                    </a>
+                                    
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="Default.aspx" class="nav-link" id="bookNavLink">
+                                        Book
+                                    </a>
+
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="Default.aspx#services" class="nav-link">
+                                        Our Services
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="Default.aspx#about" class="nav-link">
+                                        About
+                                    </a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link 
+                                        dropdown-toggle"
+                                        id="navbarDropdown" 
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                        >
+                                        Contact
+                                    </a>
+                                    <ul class="dropdown-menu"
+                                        aria-labelledby="navbarDropdown"> 
+                                        <li><a href="FAQs.aspx" class="dropdown-item">FAQs</a></li>
+                                        <li><a href="Contact.aspx" class="dropdown-item">Message Us</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+            
+                            <div class="main ms-auto">
+                                <a href="Login.aspx" class="user nav-link">
+                                <i class="fa-solid fa-user"></i>Sign In</a>
+                                <a class="nav-link" href="Register.aspx">Register</a>
+                                <div class="bx bx-menu"> </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+        </div>
+    
+ 
+</body>
+       <%--  <div> Dont touch</div> --%>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+     <%--  <div> Dont touch </div> --%>
+
+</html>
